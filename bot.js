@@ -1,18 +1,18 @@
 // init ;p
 const time = Date(),
- pak = require('./package.json'),
-const discord = require('discord.js'),
-const config = require('./json/config.json'),
-const profanities = require("./profanities.json"),
-const bot = new discord.Client()
+ discord = require('discord.js'),
+config = require('./json/config.json'),
+ profanities = require("./profanities.json"),
+bot     = new Discord.Client({fetchAllMembers: true});
 var prefix = process.env.prefix,
-const {baselogger} = require('./src/logger.js'),
-const result = Math.round(Math.random()),
-const webhookchannelid = "441710517460008960",
-const cleverbot = require('cleverbot.io'),
-const ms = require('ms'),
-const snekfetch = require('snekfetch'),
-const cb = new cleverbot("sMNApmkOjMlZRlPZ", "gskxw3JBqEVGIAboBjOnvyTf8awM1MbS")
+ {baselogger} = require('./src/logger.js'),
+ result = Math.round(Math.random()),
+ webhookchannelid = "441710517460008960",
+ cleverbot = require('cleverbot.io'),
+ ms = require('ms'),
+ snekfetch = require('snekfetch'),
+ cb = new cleverbot("sMNApmkOjMlZRlPZ", "gskxw3JBqEVGIAboBjOnvyTf8awM1MbS")
+ const fs      = require("fs");
 // End of init
 
 // The bot's support server invite vvv
