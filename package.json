@@ -1,0 +1,38 @@
+{
+     "name": "Bazooka",
+     "version": "2.0.0",
+     "description": "Utility, music, etc",
+     "main": "bot.js",
+     "author": "Itzz Daniel",
+     "license": "MIT",
+     "scripts": {
+          "start": "node bot.js"
+     },
+     "dependencies": {
+          "cheerio": "^1.0.0-rc.2",
+          "cleverbot.io": "^1.0.4",
+          "dblapi.js": "^2.0.1",
+          "discord.js": "^11.3.0",
+          "dotenv": "^8.0.0",
+          "fast-html-parser": "^1.0.1",
+          "ffmpeg": "latest",
+          "ffmpeg-binaries": "latest",
+          "get-youtube-id": "latest",
+          "google-it": "^1.1.0",
+          "google-url": "latest",
+          "knock-knock-jokes": "^1.7.0",
+          "mongoose": "latest",
+          "ms": "^2.0.0",
+          "node-opus": "^0.2.7",
+          "nodemon": "^1.12.1",
+          "opusscript": "^0.0.6",
+          "querystring": "^0.2.0",
+          "random-puppy": "^1.1.0",
+          "request": "^2.83.0",
+          "roblox-js": "latest",
+          "snekfetch": "^3.5.3",
+          "weather-js": "^2.0.0",
+          "youtube-info": "latest",
+          "ytdl-core": "latest"
+     }
+}

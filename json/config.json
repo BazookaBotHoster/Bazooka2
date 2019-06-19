@@ -1,0 +1,13 @@
+{ 
+  "prefix": "b.",
+  "admins": ["356248091227324426", "251928361851551756", "140487710727995392", "215689512058224640"],
+  "version": "1.2.0",
+  "banreason": "",
+  "kickreason": "",
+  "Developers": ["Itzz Daniel"],
+  "premiumState": "false",
+  "donotAnnounce": ["264445053596991498", "588625160873967619"],
+  "updates": ["Autoroles!"],
+  "userblacklist": [""],
+  "owners": ["335762706420203523", "588000476352741387"]
+}
