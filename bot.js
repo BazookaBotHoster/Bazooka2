@@ -28,8 +28,8 @@ process.on('unhandledRejection', (reason, promise) => {
 
 
 
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
+bot.commands = new discord.Collection();
+bot.aliases = new discord.Collection();
 fs.readdir("./commands/", (err, files) => {
   if (err) console.error(err);
   log(`Loading a total of ${files.length} commands.`);
