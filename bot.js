@@ -53,17 +53,6 @@ bot.on("guildMemberRemove", (member) => require('./events/guildMemberRemove.js')
 bot.on("guildBanRemove", (guild, member) => require('./events/BanRemove.js')(bot, guild, member))
  
 
-  if (!message.guild) return;
-  if (!message.content.startsWith(prefix)) return;
-  if (message.channel.type == "dm") return;
-
-  let mArray = message.content.split(" ");
-  let args = mArray.slice(1);
-  let loggedcmd = mArray[0].slice(prefix.length)
-
-  let cmd = bot.commands.get(loggedcmd);
-  if (message.author.bot) return;
-
   if (cmd) {
       if (config.userblacklist.includes(message.author.id)) return;
       cmd.run(bot, message, args, discord)
