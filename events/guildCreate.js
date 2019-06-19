@@ -6,11 +6,7 @@ module.exports = (bot, guild, discord) => {
   const channel = guild.channels.find(c => c.name == "welcome")
   const modc = guild.channels.find(c => c.name == "guild-logs")
   // post new server count
-  snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
-    .set('Authorization', process.env.tok)
-    .send({ server_count: bot.guilds.size })
-    .then(() => console.log('Updated discordbots.org stats.'))
-    .catch(err => console.error(`Whoops something went wrong: ${err.body}`));
+
   // Owner msg
   let member = guild.owner
   let embed = new discord.RichEmbed()
@@ -33,3 +29,4 @@ module.exports = (bot, guild, discord) => {
   })
   newD.save()
 }
+
