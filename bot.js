@@ -32,10 +32,10 @@ bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
 fs.readdir("./commands/", (err, files) => {
   if (err) console.error(err);
-  log(`Loading a total of ${files.length} commands.`);
+  console.log(`Loading a total of ${files.length} commands.`);
   files.forEach(f => {
     let props = require(`./commands/${f}`);
-    log(`Loading Commands: ${props.help.name}`);
+    console.log(`Loading Commands: ${props.help.name}`);
     bot.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       bot.aliases.set(alias, props.help.name);
