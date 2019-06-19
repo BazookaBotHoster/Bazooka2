@@ -36,16 +36,6 @@ require('fs').readdir("./commands/", (err, files) => {
   });
 });
 
-bot.on("ready", () => {
-  require('./util/consoles.js')(bot, config)
-  bot.user.setActivity("Loading Bazooka...", {type: "STREAMING", url: "https://www.youtube.com/channel/UClTLRPQLE-sVAYoIiRwbPkg?view_as=subscriber"})
-  // Post bot stats
-
-  
-  setTimeout(() => {
-    bot.user.setActivity(`for b.help | ${bot.guilds.array().length} servers`, {type: "WATCHING"});
-  }, 20000)
-
   bot.guilds.forEach((guild, id) => {
     console.log(`[SERVER] [${guild.memberCount}] ${guild.name} (${guild.id}) | Joined: ${guild.joinedAt.toString()}\n`)
   });
