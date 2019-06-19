@@ -37,7 +37,6 @@ require('fs').readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", () => {
-  require('./util/poststats.js')(bot)
   require('./util/consoles.js')(bot, config)
   bot.user.setActivity("Loading Bazooka...", {type: "STREAMING", url: "https://www.youtube.com/channel/UClTLRPQLE-sVAYoIiRwbPkg?view_as=subscriber"})
   // Post bot stats
