@@ -28,11 +28,18 @@ process.on('unhandledRejection', (reason, promise) => {
 
 
 
-require('fs').readdir("./commands/", (err, files) => {
-  console.log("Loading commands...");
-  if (err) return console.log(`Command loading failed!`);
-  files.filter(f => f.split(".").pop() === "js").forEach((f, i) => {
-    bot.commands.set(require(`./commands/${f}`).help.name, require(`./commands/${f}`));
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
+fs.readdir("./commands/", (err, files) => {
+  if (err) console.error(err);
+  log(`Loading a total of ${files.length} commands.`);
+  files.forEach(f => {
+    let props = require(`./commands/${f}`);
+    log(`Loading Commands: ${props.help.name}`);
+    bot.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      bot.aliases.set(alias, props.help.name);
+    });
   });
 });
 
