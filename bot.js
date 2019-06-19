@@ -38,8 +38,8 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`Loading Commands: ${props.help.name}`);
     bot.commands.set(props.help.name, props);
     });
-  });
-});
+
+
 
   bot.guilds.forEach((guild, id) => {
     console.log(`[SERVER] [${guild.memberCount}] ${guild.name} (${guild.id}) | Joined: ${guild.joinedAt.toString()}\n`)
