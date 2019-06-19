@@ -82,7 +82,7 @@ bot.on("guildBanRemove", (guild, member) => require('./events/BanRemove.js')(bot
     .setTimestamp()
     console.log('lol')
     message.channel.send({embed: em})
-  });
+  }
       
 bot.on("guildCreate", (guild) => {
   require('./events/guildCreate.js')(bot, guild, discord)
