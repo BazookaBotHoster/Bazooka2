@@ -13,6 +13,7 @@ var prefix = process.env.prefix,
  snekfetch = require('snekfetch'),
  cb = new cleverbot("sMNApmkOjMlZRlPZ", "gskxw3JBqEVGIAboBjOnvyTf8awM1MbS")
  const fs      = require("fs");
+const moment  = require("moment");
 // End of init
 
 // The bot's support server invite vvv
@@ -37,8 +38,11 @@ fs.readdir("./commands/", (err, files) => {
     let props = require(`./commands/${f}`);
     console.log(`Loading Commands: ${props.help.name}`);
     bot.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      bot.aliases.set(alias, props.help.name);
     });
-  })
+  });
+});
 
 
 
