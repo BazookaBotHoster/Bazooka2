@@ -38,6 +38,7 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`Loading Commands: ${props.help.name}`);
     bot.commands.set(props.help.name, props);
     });
+  })
 
 
 
@@ -64,9 +65,3 @@ bot.on("guildDelete", (guild) => {
 });
 
 bot.login(process.env.botToken); 
-
-
-
-
-
-
