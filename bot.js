@@ -8,7 +8,6 @@ bot = new discord.Client()
 var prefix = process.env.prefix,
 {baselogger} = require('./src/logger.js'),
 result = Math.round(Math.random()),
-updates = ["Work command added.", "MongoDB is now Hulkbot's official database provider."],
 webhookchannelid = "441710517460008960",
 cleverbot = require('cleverbot.io'),
 ms = require('ms'),
