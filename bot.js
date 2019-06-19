@@ -39,7 +39,7 @@ require('fs').readdir("./commands/", (err, files) => {
   bot.guilds.forEach((guild, id) => {
     console.log(`[SERVER] [${guild.memberCount}] ${guild.name} (${guild.id}) | Joined: ${guild.joinedAt.toString()}\n`)
   });
-});
+
 bot.on('error', (err) => {
   console.error(`Error... ${err}`).then(() => {
     bot.destroy().then(() => {
