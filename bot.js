@@ -51,7 +51,25 @@ bot.on("guildMemberAdd", (member) => require('./events/guildMemberAdd.js')(bot, 
 bot.on("guildMemberRemove", (member) => require('./events/guildMemberRemove.js')(bot, member))
 // bot.on("guildBanAdd", (guild, member) => require('./events/BanAdd.js')(bot, guild, member))
 bot.on("guildBanRemove", (guild, member) => require('./events/BanRemove.js')(bot, guild, member))
-  
+ 
+
+  if (!message.guild) return;
+  if (!message.content.startsWith(prefix)) return;
+  if (message.channel.type == "dm") return;
+
+  let mArray = message.content.split(" ");
+  let args = mArray.slice(1);
+  let loggedcmd = mArray[0].slice(prefix.length)
+
+  let cmd = bot.commands.get(loggedcmd);
+  if (message.author.bot) return;
+
+  if (cmd) {
+      if (config.userblacklist.includes(message.author.id)) return;
+      cmd.run(bot, message, args, discord)
+      console.log(`${message.author.username} used the ${loggedcmd} command.`);
+      baselogger(bot, `**Command Run**\n\n**Command:** ${loggedcmd}\n**User:** ${message.author.tag}\n**Message:** ${message.content}\n**Guild:** ${message.guild.name}\n**Channel:** ${message.channel.name}`);
+  } 
     if (message.content == "i love you Bazooka") {
     message.channel.send("oh god, not another one");
   }
@@ -77,3 +95,6 @@ bot.on("guildDelete", (guild) => {
 });
 
 bot.login(process.env.botToken); 
+
+
+
