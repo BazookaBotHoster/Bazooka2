@@ -52,25 +52,7 @@ bot.on("guildMemberRemove", (member) => require('./events/guildMemberRemove.js')
 // bot.on("guildBanAdd", (guild, member) => require('./events/BanAdd.js')(bot, guild, member))
 bot.on("guildBanRemove", (guild, member) => require('./events/BanRemove.js')(bot, guild, member))
  
-bot.on("message", message => {
-  var mentionedmember = message.mentions.members.first()
-  gdata.findOne({guildId: message.guild.id}, (err,data) => {
-    if (data == null) {
-      const newG = new gdata({
-        guildId: message.guild.id,
-        prefix: "b.",
-        isPremium: false,
-        welcome: null,
-        modlog: null,
-        isBL: false
-      })
-      newG.save()
-      prefix = newG.prefix
-    } else {
-      prefix = data.prefix
-    }
-  })
-  
+
   if (!message.guild) return;
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == "dm") return;
