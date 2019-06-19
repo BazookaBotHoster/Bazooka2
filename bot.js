@@ -1,6 +1,6 @@
 // init ;p
 const time = Date(),
-const pak = require('./package.json'),
+ pak = require('./package.json'),
 const discord = require('discord.js'),
 const config = require('./json/config.json'),
 const profanities = require("./profanities.json"),
