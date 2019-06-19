@@ -139,7 +139,4 @@ let upmsg = `Oh yeah, more updates! New updates:\n${updates}`
      up.pop(up)
    })
   }
-exports.date = time
-exports.bot = bot
-exports.updates = updates.join(" ")
-exports.sendupdates = senddat
+
