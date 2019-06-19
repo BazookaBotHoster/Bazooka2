@@ -8,7 +8,6 @@ bot = new discord.Client()
 var prefix = process.env.prefix,
 {baselogger} = require('./src/logger.js'),
 result = Math.round(Math.random()),
-updates = ["Work command added.", "MongoDB is now Hulkbot's official database provider."],
 webhookchannelid = "441710517460008960",
 cleverbot = require('cleverbot.io'),
 ms = require('ms'),
@@ -93,13 +92,4 @@ bot.on("guildDelete", (guild) => {
 
 bot.login(process.env.botToken); 
 
-let upmsg = `Oh yeah, more updates! New updates:\n${updates}`
-  async function senddat(up,msg) {
-    if (up == null) return;
-   await bot.channels.get('441982405985828864').send(msg).then(() => {
-     up.pop(up)
-   })
-   await bot.channels.get('441982440005697539').send(msg).then(() => {
-     up.pop(up)
-   })
-  }
+
