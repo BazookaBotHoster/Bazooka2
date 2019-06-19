@@ -52,7 +52,7 @@ bot.on("guildMemberRemove", (member) => require('./events/guildMemberRemove.js')
 // bot.on("guildBanAdd", (guild, member) => require('./events/BanAdd.js')(bot, guild, member))
 bot.on("guildBanRemove", (guild, member) => require('./events/BanRemove.js')(bot, guild, member))
  
-}
+
   if (!message.guild) return;
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == "dm") return;
@@ -95,6 +95,3 @@ bot.on("guildDelete", (guild) => {
 });
 
 bot.login(process.env.botToken); 
-
-
-
